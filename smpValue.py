@@ -40,8 +40,11 @@ class SmpValue(object):
         self._value = None
         self.value = value
 
+    def __repr__(self):
+        return self.__str__()
+
     def __str__(self):
-        return '<0x{:02X},{}>'.format(self._type.value, self._value)
+        return '{}'.format(self._value)
 
     def __eq__(self, other):
         return ((self._type == other._type) and (self._value == other._value))
